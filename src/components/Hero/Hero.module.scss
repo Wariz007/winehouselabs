@@ -1,0 +1,83 @@
+@use '@/styles/variables' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: $space-lg $space-md;
+  background-color: $color-black;
+  height: 100vh;
+  //border: 2px solid magenta;
+}
+
+.heading {
+    //border: 2px solid magenta;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.label {
+  font-family: $font-mono;
+  font-size: $text-sm;
+  color: $color-white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  border-bottom: 1px solid $color-white;
+  padding-bottom: 2px;
+  align-self: flex-start;
+  line-height: 40px;
+}
+
+.headline {
+  font-family: $font-heading;
+  font-size: 30px;
+  font-weight: 500;
+  color: $color-white;
+  line-height: 45px;
+  margin-bottom: $space-sm;
+}
+
+.arrow {
+  font-size: $text-xl;
+  color: $color-white;
+  margin-bottom: $space-lg;
+}
+
+.flag {
+  width: 100%;
+  height: 200px;
+  background-color: $color-gray-dark;
+  margin-bottom: $space-lg;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-sm;
+  border-top: 1px solid $color-gray-dark;
+  padding-top: $space-md;
+  //border: 2px solid magenta;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+
+
+  h4 {
+    font-family: $font-heading;
+    font-size: $text-base;
+    font-weight: 600;
+    color: $color-white;
+  }
+
+  p {
+    font-family: $font-mono;
+    font-size: $text-sm;
+    color: $color-gray-mid;
+    line-height: 1.4;
+  }
+}
