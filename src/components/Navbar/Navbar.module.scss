@@ -1,0 +1,22 @@
+@import '@/styles/variables';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $color-white;
+  height: fit-content;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger {
+  //border: 2px solid magenta;
+}
+
+.logo {
+  //border: 2px solid magenta;
+}
