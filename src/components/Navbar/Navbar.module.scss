@@ -1,6 +1,8 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .navbar {
+  //border: 2px solid magenta;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,12 +13,58 @@
   background-color: white;
   height: fit-content;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+   @include respond-to(medium) {
+      justify-content: center;
+    }  
+
+  .navContent {
+    //border: 2px solid magenta;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    @include respond-to(medium) {
+      width: 800px;
+    }
+  }
 }
 
-/*.hamburger {
-  //border: 2px solid magenta;
+.logoFull {
+  display: none;
 }
 
-.logo {
-  //border: 2px solid magenta;
-}*/
+@include respond-to(medium) {
+  .logoIcon {
+    display: none;
+  }
+
+  .logoFull {
+    display: block;
+  }
+}
+
+.desktopNav {
+  display: none;
+
+  a {
+    color: black;
+    font-family: $font-mono;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  @include respond-to(medium) {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+}
+
+.hamburger {
+  @include respond-to(medium) {
+    display: none;
+  }
+}
