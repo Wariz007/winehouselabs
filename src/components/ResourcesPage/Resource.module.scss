@@ -1,0 +1,33 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.resources {
+    padding: 20px;
+
+    .resourcesContainer {
+        //border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .resourcesSection {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 2px solid magenta;
+        }
+    }
+
+    .heading {
+        //border: 2px solid magenta;
+        font-family: $font-mono;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: inline-block;
+        border-bottom: 1px solid $color-white;
+        align-self: flex-start;
+        line-height: 30px;
+    }
+}

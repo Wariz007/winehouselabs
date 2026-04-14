@@ -1,0 +1,29 @@
+@use '@/styles/variables' as *;
+
+.resourceBtn {
+    //border: 2px solid magenta;
+    display: flex;
+    justify-content: space-between;
+
+    .textContainer {
+        //border: 2px solid magenta;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 10px;
+
+        h3 {
+            font-size: 40px;
+            line-height: 50px;
+            font-family: $font-heading;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 25px;
+            font-family: $font-body;
+            font-weight: 300;
+        }
+    }
+}
