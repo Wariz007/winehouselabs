@@ -18,6 +18,7 @@ export default function AboutUsAndCommunity() {
                     alt='WHL-community-design.png'
                     width={350}
                     height={200}
+                    className={styles.communityImage}
                 />
 
                 <div className={styles.communityText}>

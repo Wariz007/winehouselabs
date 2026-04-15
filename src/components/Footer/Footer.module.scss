@@ -1,0 +1,55 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.footer {
+    //border: 2px solid magenta;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footerContent {
+        //border: 2px solid magenta;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @include respond-to(medium) {
+            width: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            //border: 2px solid magenta;
+        }
+    }
+
+    .footerBtns {
+        //border: 2px solid magenta;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        gap: 20px;
+
+        button {
+            font-family: $font-mono;
+            font-size: 10px;
+            line-height: 30px;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid black;
+            width: fit-content;
+            text-align: center;
+        }
+    }
+
+    .socials {
+        //border: 2px solid magenta;
+        display: flex;
+        gap: 30px;
+        height: fit-content;
+    }
+}
