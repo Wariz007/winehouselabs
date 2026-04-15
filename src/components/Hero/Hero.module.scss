@@ -17,6 +17,7 @@
     justify-content: space-between;
     height: fit-content;
     gap: 20px;
+    align-items: center;
 
     @include respond-to(medium) {
       width: 800px;
@@ -37,7 +38,7 @@
   height: 200px;
 
   @include respond-to(medium) {
-    width: 800px;
+    width: 500px;
     height: 300px;
   }
 }
@@ -83,6 +84,7 @@
 
   @include respond-to(medium) {
     grid-template-columns: 1fr;
+    width: 800px;
   }
 }
 
