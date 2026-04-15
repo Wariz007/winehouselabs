@@ -1,5 +1,6 @@
 import styles from './AandC.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutUsAndCommunity() {
     return (
@@ -9,13 +10,13 @@ export default function AboutUsAndCommunity() {
                     Our ultimate goal is to make sure our actions contribute to the prosperity and pride of Nigeria. Using the knowledge we accumulate, we aim to solve real-world problems and create meaningful change across Nigeria—from local communities to the national stage
                 </p>
 
-                <button>Read more about us</button>
+                <Link href="#">Read more about us</Link>
             </div>
 
             <div className={styles.community}>
                 <Image 
                     src="/WHL-community-design.png"
-                    alt='WHL-community-design.png'
+                    alt='Winehouse community design'
                     width={350}
                     height={200}
                     className={styles.communityImage}
@@ -26,7 +27,7 @@ export default function AboutUsAndCommunity() {
                     <p>
                         The Winehouse community is focused on building generations of capable Nigerian software engineers who will rise to the challenge of solving Nigeria's toughest problems
                     </p>
-                    <button>Join Us!</button>
+                    <Link href="#">Join Us!</Link>
                 </div>
             </div>
 

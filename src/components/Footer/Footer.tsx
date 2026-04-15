@@ -1,5 +1,6 @@
 import styles from './Footer.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -8,44 +9,46 @@ export default function Footer() {
                 <div className={styles.footerBtns}>
                     <Image 
                         src="/Winehouse_logo.png"
-                        alt='The WHL logo'
+                        alt='WinehouseLabs'
                         width={120}
                         height={50}
                         className={styles.footerLogo}
                     />
-                    <button>About Us</button>
-                    <button>Our Research Presentation</button>
-                    <button>Terms and Policy</button>
-                    <button>WinehouseLabs Community</button>
+                    <ul>
+                        <li><Link href="/about-us">About Us</Link></li>
+                        <li><Link href="/our-research-presentation">Our Research Presentation</Link></li>
+                        <li><Link href="/terms-and-policy">Terms and Policy</Link></li>
+                        <li><Link href="/winehouselabs-community">WinehouseLabs Community</Link></li>
+                    </ul>
                 </div>
 
                 <div className={styles.socials}>
-                    <button>
+                    <a href="#">
                         <Image 
                             src="/IG.png"
-                            alt='The WHL logo'
+                            alt='Instagram'
                             width={20}
                             height={20}
                         />
-                    </button>
+                    </a>
 
-                    <button>
+                    <a href="#">
                         <Image 
                             src="/X.png"
-                            alt='The WHL logo'
+                            alt='X (formerly Twitter)'
                             width={20}
                             height={20}
                         />
-                    </button>
+                    </a>
 
-                    <button>
+                    <a href="#">
                         <Image 
                             src="/mail.png"
-                            alt='The WHL logo'
+                            alt='mail'
                             width={20}
                             height={20}
                         />
-                    </button>
+                    </a>
                 </div>
             </div>
 

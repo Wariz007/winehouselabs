@@ -28,7 +28,8 @@ export default function Navbar() {
 
         <button
           className={styles.hamburger}
-          aria-label="Toggle menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
         >
           <Image 
               src="/burger_menu_icon.png"
@@ -38,10 +39,10 @@ export default function Navbar() {
           />
         </button>
 
-        <nav className={styles.desktopNav}>
-          <Link href="/about">About Us</Link>
-          <Link href="/community">Community</Link>
-        </nav>
+        <ul className={styles.desktopNav}>
+          <li><Link href="/about">About Us</Link></li>
+          <li><Link href="/community">Community</Link></li>
+        </ul>
       </div>
     </nav>
   );

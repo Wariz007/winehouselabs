@@ -6,39 +6,54 @@ export default function Resource() {
     return (
         <section className={styles.resources}>
             <div className={styles.resourcesContainer}>
-                <p className={styles.heading}>Resources</p>
+                <h2 className={styles.heading}>Resources</h2>
 
-                <div className={styles.resourcesSection}>
-                    <ResourceCard 
-                        title={<>How <br /> Computers <br /> Work</>}
-                        description="Understanding how high-level code translates into physical execution on the silicon."
-                        icon='/circuitry.png'
-                    />
+                <ul className={styles.resourcesSection}>
+                    <li>
+                        <ResourceCard 
+                            title={<>How <br /> Computers <br /> Work</>}
+                            description="Understanding how high-level code translates into physical execution on the silicon."
+                            icon='/circuitry.png'
+                            href='#'
+                        />
+                    </li>
 
-                    <ResourceCard 
-                        title="Web Technologies"
-                        description="Languages and tools used to build for the web"
-                        icon='/globe.png'
-                    />
+                    <li>
+                        <ResourceCard 
+                            title="Web Technologies"
+                            description="Languages and tools used to build for the web"
+                            icon='/globe.png'
+                            href='#'
+                        />
+                    </li>   
 
-                    <ResourceCard 
-                        title="Programming Languages"
-                        description="Different languages to communicate with computers"
-                        icon='/terminal.png'
-                    />
+                    <li>
+                        <ResourceCard 
+                            title="Programming Languages"
+                            description="Different languages to communicate with computers"
+                            icon='/terminal.png'
+                            href='#'
+                        />
+                    </li>
 
-                    <ResourceCard 
-                        title="Tech Roles"
-                        description="Resources organized by engineering discipline"
-                        icon='/users.png'
-                    />
+                    <li>
+                        <ResourceCard 
+                            title="Tech Roles"
+                            description="Resources organized by engineering discipline"
+                            icon='/users.png'
+                            href='#'
+                        />
+                    </li>
 
-                    <ResourceCard 
-                        title="Essential Tools"
-                        description="Cross-disciplinary tools"
-                        icon='/cpu.png'
-                    />
-                </div>
+                    <li>
+                        <ResourceCard 
+                            title="Essential Tools"
+                            description="Cross-disciplinary tools"
+                            icon='/cpu.png'
+                            href='#'
+                        />
+                    </li>
+                </ul>
             </div>
         </section>
     )

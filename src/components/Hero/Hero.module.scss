@@ -2,7 +2,6 @@
 @use '@/styles/mixins' as *;
 
 .hero {
-  //border: 2px solid magenta;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,13 +10,8 @@
   background-color: $color-black;
   height: 100%;
 
-  /*@include respond-to(medium) {
-    height: fit-content;
-  }*/
-
 
   .heroContent {
-    //border: 5px solid red;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -33,7 +27,6 @@
 }
 
 .heading {
-    //border: 2px solid magenta;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -50,7 +43,6 @@
 }
 
 .missionLabel {
-  //border: 2px solid magenta;
   font-family: $font-mono;
   font-size: 15px;
   font-weight: bold;
@@ -84,7 +76,6 @@
 }
 
 .pillars {
-  //border: 2px solid magenta;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -96,7 +87,6 @@
 }
 
 .pillar {
-  //border: 2px solid magenta;
   border-top: 0.5px solid rgba(255, 255, 255, 0.514);
   padding-top: 15px;
   display: flex;

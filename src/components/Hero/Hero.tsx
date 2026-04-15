@@ -17,7 +17,7 @@ export default function Hero() {
                       alt="arrow"
                       width={40}
                       height={40}
-                      //className={styles.flag}
+                      aria-hidden="true"
               />
           </div>
 
@@ -29,20 +29,20 @@ export default function Hero() {
               className={styles.flag}
           />
 
-        <div className={styles.pillars}>
-          <div className={styles.pillar}>
+        <ul className={styles.pillars}>
+          <li className={styles.pillar}>
             <h4>Research</h4>
             <p>Accumulating the worlds knowledge on software engineering</p>
-          </div>
-          <div className={styles.pillar}>
+          </li>
+          <li className={styles.pillar}>
             <h4>Innovate</h4>
             <p>Finding solutions to Nigeria&apos;s toughest problems</p>
-          </div>
-          <div className={styles.pillar}>
+          </li>
+          <li className={styles.pillar}>
             <h4>Build</h4>
             <p>Committed to building Nigeria</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
   );
