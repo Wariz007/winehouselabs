@@ -3,12 +3,20 @@
 
 .resources {
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .resourcesContainer {
         //border: 2px solid red;
         display: flex;
         flex-direction: column;
         gap: 10px;
+
+        @include respond-to(medium) {
+            //border: 2px solid magenta;
+            width: 800px;
+        }
 
         .resourcesSection {
             display: flex;

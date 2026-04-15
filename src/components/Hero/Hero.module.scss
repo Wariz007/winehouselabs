@@ -88,7 +88,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  //border-top: 1px solid $color-gray-dark;
   padding-top: $space-md;
 
   @include respond-to(medium) {
@@ -98,7 +97,7 @@
 
 .pillar {
   //border: 2px solid magenta;
-  border-top: 0.5px solid white;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.514);
   padding-top: 15px;
   display: flex;
   flex-direction: column;
