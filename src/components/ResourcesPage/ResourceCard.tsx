@@ -1,8 +1,9 @@
+import React from 'react';
 import styles from './ResourceCard.module.scss';
 import Image from 'next/image'; 
 
 interface ResourceProps {
-  title: string;
+  title: React.ReactNode;
   description: string;
   icon?: string; // Or a ReactNode if passing icons
 }
@@ -17,7 +18,7 @@ export default function ResourceCard({ title, description, icon }: ResourceProps
       
       {icon && (
         <div className={styles.iconContainer}>
-          <Image src={icon} alt="Resource icon" width={56} height={56} />
+          <Image src={icon} alt="Resource icon" width={50} height={50} />
         </div>
       )}
     </button>

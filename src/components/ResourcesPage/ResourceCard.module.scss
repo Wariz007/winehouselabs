@@ -3,7 +3,11 @@
 .resourceBtn {
     //border: 2px solid magenta;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding-block: 20px;
+    border-top: 0.5px solid rgb(189, 189, 189);
 
     .textContainer {
         //border: 2px solid magenta;
@@ -11,6 +15,7 @@
         flex-direction: column;
         text-align: left;
         gap: 10px;
+        width: fit-content;
 
         h3 {
             font-size: 40px;

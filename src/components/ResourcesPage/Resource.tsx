@@ -10,7 +10,7 @@ export default function Resource() {
 
                 <div className={styles.resourcesSection}>
                     <ResourceCard 
-                        title="How Computers Work"
+                        title={<>How <br /> Computers <br /> Work</>}
                         description="Understanding how high-level code translates into physical execution on the silicon."
                         icon='/circuitry.png'
                     />
