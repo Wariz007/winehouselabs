@@ -10,7 +10,7 @@ export default function AboutUsAndCommunity() {
                     Our ultimate goal is to make sure our actions contribute to the prosperity and pride of Nigeria. Using the knowledge we accumulate, we aim to solve real-world problems and create meaningful change across Nigeria—from local communities to the national stage
                 </p>
 
-                <Link className={styles.readMoreLink} href="#">
+                <Link className={styles.readMoreLink} href="/about">
                     Read more about us
                 </Link>
             </div>
