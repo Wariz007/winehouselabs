@@ -13,6 +13,7 @@ export default function AboutPage() {
                         alt='About Us image'
                         width={350}
                         height={200}
+                        className={styles.aboutImage}
                     />
                 </header>
 
