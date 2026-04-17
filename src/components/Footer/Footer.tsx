@@ -17,7 +17,7 @@ export default function Footer() {
                     <ul>
                         <li><Link href="/about">About Us</Link></li>
                         <li><Link href="/researchPresentation">Our Research Presentation</Link></li>
-                        <li><Link href="/terms-and-policy">Terms and Policy</Link></li>
+                        <li><Link href="/TandC">Terms and Policy</Link></li>
                         <li><Link href="/winehouselabs-community">WinehouseLabs Community</Link></li>
                     </ul>
                 </div>
