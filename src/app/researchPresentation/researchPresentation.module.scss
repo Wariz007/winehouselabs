@@ -1,0 +1,46 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.researchPresentationPage {
+    background-color: $color-gray;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .researchPresentationContainer {
+        //border: 2px solid cyan;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include respond-to(medium) {
+            width: 500px;
+        }
+
+        h1 {
+            padding: 30px;
+            text-align: center;
+            font-family: $font-heading;
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .body {
+            //border: 2px solid magenta;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            padding-inline: 20px;
+
+            p {
+                font-family: $font-body;
+                font-size: 15px;
+                line-height: 30px;
+            }
+        }
+    }
+}

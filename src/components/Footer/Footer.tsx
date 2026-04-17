@@ -15,8 +15,8 @@ export default function Footer() {
                         className={styles.footerLogo}
                     />
                     <ul>
-                        <li><Link href="/about-us">About Us</Link></li>
-                        <li><Link href="/our-research-presentation">Our Research Presentation</Link></li>
+                        <li><Link href="/about">About Us</Link></li>
+                        <li><Link href="/researchPresentation">Our Research Presentation</Link></li>
                         <li><Link href="/terms-and-policy">Terms and Policy</Link></li>
                         <li><Link href="/winehouselabs-community">WinehouseLabs Community</Link></li>
                     </ul>
