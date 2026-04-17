@@ -36,6 +36,8 @@
 .flag {
   width: 100%;
   height: 200px;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.8s forwards;
 
   @include respond-to(medium) {
     width: 500px;
@@ -54,6 +56,7 @@
   border-bottom: 1px solid $color-white;
   align-self: flex-start;
   line-height: 40px;
+  animation: slideUp 0.6s ease forwards;
 }
 
 .headline {
@@ -63,6 +66,8 @@
   color: $color-white;
   line-height: 45px;
   margin-bottom: $space-sm;
+  opacity: 0;
+  animation: slideUp 0.8s ease 0.3s forwards;
 
   @include respond-to(medium) {
     font-size: 40px;
@@ -71,9 +76,8 @@
 }
 
 .arrow {
-  font-size: $text-xl;
-  color: $color-white;
-  margin-bottom: $space-lg;
+  opacity: 0;
+  animation: slideUp 0.8s ease 0.5s forwards;
 }
 
 .pillars {
@@ -81,6 +85,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding-top: $space-md;
+  opacity: 0;
+  animation: slideUp 0.8s ease 1.2s forwards;
 
   @include respond-to(medium) {
     grid-template-columns: 1fr;
@@ -109,5 +115,36 @@
     font-size: $text-sm;
     color: $color-gray-mid;
     line-height: 1.4;
+  }
+}
+
+@keyframes typeIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

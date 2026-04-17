@@ -18,6 +18,7 @@ export default function Hero() {
                       width={40}
                       height={40}
                       aria-hidden="true"
+                      className={styles.arrow}
               />
           </div>
 
