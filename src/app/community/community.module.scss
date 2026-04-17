@@ -1,0 +1,74 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.communityPage {
+    background-color: $color-gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.communityContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.communityHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-block: 30px;
+    padding-inline: 20px;
+    gap: 15px;
+
+    span {
+        font-family: $font-mono;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-family: $font-heading;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 40px;
+    }
+
+    p {
+        font-family: $font-body;
+        font-size: 15px;
+        line-height: 30px;
+    }
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 30px;
+    padding-inline: 20px;
+    width: 100%;
+
+    .inputField {
+        border-bottom: 1px solid black;
+        background-color: transparent;
+        width: 100%;
+        padding: 5px;
+        &::placeholder {
+            color: black;
+            font-family: $font-mono;
+            font-size: 10px;
+            line-height: 20px;
+            font-style: normal;
+            font-weight: 400;
+        }
+    }
+
+    button {
+        border-bottom: 1px solid black;
+        width: fit-content;
+    }
+}
