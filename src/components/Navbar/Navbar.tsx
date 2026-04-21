@@ -1,10 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.scss';
+import BurgerMenu from '@/components/BurgerMenu/BurgerMenu';
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav className={styles.navbar}>
@@ -29,7 +32,8 @@ export default function Navbar() {
         <button
           className={styles.hamburger}
           aria-label="Toggle navigation menu"
-          aria-expanded="false"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <Image 
               src="/burger_menu_icon.png"
@@ -44,6 +48,7 @@ export default function Navbar() {
           <li><Link href="/community">Community</Link></li>
         </ul>
       </div>
+      {isMenuOpen && <BurgerMenu />}
     </nav>
   );
 }

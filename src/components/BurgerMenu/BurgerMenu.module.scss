@@ -1,0 +1,72 @@
+@use '@/styles/variables' as *;
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.burgerMenu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: $color-black;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding-block: 20px;
+  padding-inline: 50px;
+  gap: 40px;
+  animation: slideIn 0.3s ease forwards;
+  overflow-y: auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sectionLabel {
+  font-family: $font-heading;
+  font-size: 15px;
+  font-weight: bold;
+  color: $color-white;
+  border-bottom: 1px solid $color-white;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+.resourceLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-block: 5px;
+
+    a {
+      font-family: $font-body;
+      font-size: 15px;
+      color: $color-white;
+    }
+  }
+}
+
+.pageLink {
+  font-family: $font-mono;
+  font-size: 15px;
+  font-weight: bold;
+  color: $color-white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 12px;
+}
