@@ -11,21 +11,13 @@ export default function Resource() {
                 <ul className={styles.resourcesSection}>
                     <li>
                         <ResourceCard 
-                            title={<>How <br /> Computers <br /> Work</>}
-                            description="Understanding how high-level code translates into physical execution on the silicon."
-                            icon='/circuitry.png'
-                            href='#'
-                        />
-                    </li>
-
-                    <li>
-                        <ResourceCard 
                             title="Web Technologies"
                             description="Languages and tools used to build for the web"
                             icon='/globe.png'
                             href='#'
+                            hasContent={true}
                         />
-                    </li>   
+                    </li>
 
                     <li>
                         <ResourceCard 
@@ -33,15 +25,7 @@ export default function Resource() {
                             description="Different languages to communicate with computers"
                             icon='/terminal.png'
                             href='#'
-                        />
-                    </li>
-
-                    <li>
-                        <ResourceCard 
-                            title="Tech Roles"
-                            description="Resources organized by engineering discipline"
-                            icon='/users.png'
-                            href='#'
+                            hasContent={true}
                         />
                     </li>
 
@@ -51,6 +35,27 @@ export default function Resource() {
                             description="Cross-disciplinary tools"
                             icon='/cpu.png'
                             href='#'
+                            hasContent={false}
+                        />
+                    </li>
+
+                    <li>
+                        <ResourceCard 
+                            title="Tech Roles"
+                            description="Resources organized by engineering discipline"
+                            icon='/users.png'
+                            href='#'
+                            hasContent={false}
+                        />
+                    </li>
+
+                    <li>
+                        <ResourceCard 
+                            title={<>How <br /> Computers <br /> Work</>}
+                            description="Understanding how high-level code translates into physical execution on the silicon."
+                            icon='/circuitry.png'
+                            href='#'
+                            hasContent={false}
                         />
                     </li>
                 </ul>

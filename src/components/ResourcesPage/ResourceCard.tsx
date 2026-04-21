@@ -8,11 +8,15 @@ interface ResourceProps {
   description: string;
   icon?: string;
   href?: string;
+  hasContent?: boolean;
 }
 
-export default function ResourceCard({ title, description, icon, href }: ResourceProps) {
+export default function ResourceCard({ title, description, icon, href, hasContent = false }: ResourceProps) {
   return (
-    <Link href={href || '#'} className={styles.resourceBtn}>
+    <Link
+      href={hasContent ? (href || '#') : '#'}
+      className={`${styles.resourceBtn} ${!hasContent ? styles.empty : ''}`}
+    >
         <div className={styles.textContainer}>
             <h3 className={styles.heading}>{title}</h3>
             <p className={styles.description}>{description}</p>
