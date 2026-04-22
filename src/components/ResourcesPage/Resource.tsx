@@ -1,63 +1,30 @@
 import styles from './Resource.module.scss';
-import Image from 'next/image';
 import ResourceCard from './ResourceCard';
+import { createClient } from '@/utils/supabase/server';
 
-export default function Resource() {
+export default async function Resource() {
+    const supabase = await createClient()
+    const { data: categories } = await supabase
+        .from('categories')
+        .select()
+        .order('created_at', { ascending: true })
+
     return (
         <section className={styles.resources}>
             <div className={styles.resourcesContainer}>
                 <h2 className={styles.heading}>Resources</h2>
 
                 <ul className={styles.resourcesSection}>
-                    <li>
-                        <ResourceCard 
-                            title="Web Technologies"
-                            description="Languages and tools used to build for the web"
-                            icon='/globe.png'
-                            href='#'
-                            hasContent={true}
-                        />
-                    </li>
-
-                    <li>
-                        <ResourceCard 
-                            title="Programming Languages"
-                            description="Different languages to communicate with computers"
-                            icon='/terminal.png'
-                            href='#'
-                            hasContent={true}
-                        />
-                    </li>
-
-                    <li>
-                        <ResourceCard 
-                            title="Essential Tools"
-                            description="Cross-disciplinary tools"
-                            icon='/cpu.png'
-                            href='#'
-                            hasContent={false}
-                        />
-                    </li>
-
-                    <li>
-                        <ResourceCard 
-                            title="Tech Roles"
-                            description="Resources organized by engineering discipline"
-                            icon='/users.png'
-                            href='#'
-                            hasContent={false}
-                        />
-                    </li>
-
-                    <li>
-                        <ResourceCard 
-                            title={<>How <br /> Computers <br /> Work</>}
-                            description="Understanding how high-level code translates into physical execution on the silicon."
-                            icon='/circuitry.png'
-                            href='#'
-                            hasContent={false}
-                        />
-                    </li>
+                    {categories?.map((category) => (
+                        <li key={category.id}>
+                            <ResourceCard 
+                                title={category.name}
+                                description={category.description}
+                                href={`/resources/${category.slug}`}
+                                hasContent={category.has_content}
+                            />
+                        </li>
+                    ))}
                 </ul>
             </div>
         </section>
