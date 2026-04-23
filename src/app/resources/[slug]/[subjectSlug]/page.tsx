@@ -26,23 +26,25 @@ export default async function SubjectPage({ params }: Props) {
 
   return (
     <main className={styles.page}>
-      <div className={styles.header}>
-        <h1 className={styles.heading}>{subject.name}</h1>
+      <div className={styles.pageContent}>
+        <div className={styles.header}>
+          <h1 className={styles.heading}>{subject.name}</h1>
+        </div>
+
+        <div className={styles.divider}></div>
+
+        <ul className={styles.topics}>
+          {topics?.map((topic: any) => (
+            <li key={topic.id} className={styles.topicItem}>
+              <span className={styles.lastUpdated}>Last updated: {topic.created_at?.split('T')[0]}</span>
+              <a href={`/resources/${slug}/${subjectSlug}/${topic.slug}`} className={styles.topicLink}>
+                {topic.title}
+              </a>
+              <div className={styles.divider}></div>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <div className={styles.divider}></div>
-
-      <ul className={styles.topics}>
-        {topics?.map((topic: any) => (
-          <li key={topic.id} className={styles.topicItem}>
-            <span className={styles.lastUpdated}>Last updated: {topic.created_at?.split('T')[0]}</span>
-            <a href={`/resources/${slug}/${subjectSlug}/${topic.slug}`} className={styles.topicLink}>
-              {topic.title}
-            </a>
-            <div className={styles.divider}></div>
-          </li>
-        ))}
-      </ul>
     </main>
   )
 }

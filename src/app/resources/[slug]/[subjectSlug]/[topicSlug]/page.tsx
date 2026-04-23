@@ -21,16 +21,18 @@ export default async function TopicPage({ params }: Props) {
 
   return (
     <main className={styles.page}>
-      <div className={styles.header}>
-        <span className={styles.lastUpdated}>Last updated: {topic.created_at?.split('T')[0]}</span>
-        <h1 className={styles.heading}>{topic.title}</h1>
+      <div className={styles.pageContent}>
+        <div className={styles.header}>
+          <span className={styles.lastUpdated}>Last updated: {topic.created_at?.split('T')[0]}</span>
+          <h1 className={styles.heading}>{topic.title}</h1>
+        </div>
+
+        <div className={styles.divider}></div>
+
+        <article className={styles.content}>
+          <ReactMarkdown>{topic.content}</ReactMarkdown>
+        </article>
       </div>
-
-      <div className={styles.divider}></div>
-
-      <article className={styles.content}>
-        <ReactMarkdown>{topic.content}</ReactMarkdown>
-      </article>
     </main>
   )
 }

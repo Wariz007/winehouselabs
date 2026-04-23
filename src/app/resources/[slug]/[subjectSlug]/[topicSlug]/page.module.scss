@@ -2,12 +2,16 @@
 @use '@/styles/mixins' as *;
 
 .page {
+  background-color: $color-black;
+}
+
+.pageContent {
   display: flex;
   flex-direction: column;
   padding: 20px;
   background-color: $color-black;
   min-height: 100vh;
-
+  
   @include respond-to(medium) {
     max-width: 800px;
     margin: 0 auto;

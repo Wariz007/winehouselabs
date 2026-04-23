@@ -30,29 +30,31 @@ export default async function ResourcePage({ params }: Props) {
 
   return (
     <main className={styles.page}>
-      <div className={styles.header}>
-        <h1 className={styles.heading}>{category.name}</h1>
-        <p className={styles.description}>{category.page_description}</p>
+      <div className={styles.pageContent}>
+        <div className={styles.header}>
+          <h1 className={styles.heading}>{category.name}</h1>
+          <p className={styles.description}>{category.page_description}</p>
+        </div>
+
+        <div className={styles.divider}></div>
+
+        <ul className={styles.subjects}>
+          {categorySubjects?.map((item) => {
+            const subject = item.subjects as any
+            return (
+              <li key={subject.id}>
+                <SubjectCard
+                  title={subject.name}
+                  description={subject.description}
+                  coverImage={subject.cover_image}
+                  lastUpdated={subject.last_updated}
+                  href={`/resources/${slug}/${subject.slug}`}
+                />
+              </li>
+            )
+          })}
+        </ul>
       </div>
-
-      <div className={styles.divider}></div>
-
-      <ul className={styles.subjects}>
-        {categorySubjects?.map((item) => {
-          const subject = item.subjects as any
-          return (
-            <li key={subject.id}>
-              <SubjectCard
-                title={subject.name}
-                description={subject.description}
-                coverImage={subject.cover_image}
-                lastUpdated={subject.last_updated}
-                href={`/resources/${slug}/${subject.slug}`}
-              />
-            </li>
-          )
-        })}
-      </ul>
     </main>
   )
 }

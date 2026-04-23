@@ -2,12 +2,16 @@
 @use '@/styles/mixins' as *;
 
 .page {
+  background-color: $color-black;
+}
+
+.pageContent {
   display: flex;
   flex-direction: column;
   padding: 20px;
   background-color: $color-black;
   min-height: 100vh;
-
+  
   @include respond-to(medium) {
     max-width: 800px;
     margin: 0 auto;
@@ -18,8 +22,10 @@
 .header {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 15px;
   padding-block: 30px;
+  text-align: center;
 }
 
 .heading {
@@ -31,11 +37,14 @@
 }
 
 .description {
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  margin: auto 0;
   font-family: $font-body;
   font-size: 15px;
-  color: $color-gray-mid;
+  color: $color-gray;
   line-height: 1.6;
-  text-align: center;
 
   @include respond-to(medium) {
     text-align: left;
@@ -50,9 +59,21 @@
 }
 
 .subjects {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
+
+  @include respond-to(small) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  li {
+  width: 100%;
+  
+  @include respond-to(small) {
+    max-width: 300px;
+  }
+}
 }
 
 .subject {
