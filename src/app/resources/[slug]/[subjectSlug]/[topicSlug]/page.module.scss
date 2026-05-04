@@ -21,10 +21,40 @@
   :global(code) {
     font-family: $font-mono;
     background-color: black;
-    color: red;
+    color: yellow;
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 13px;
+  }
+
+  :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: 20px;
+    font-family: $font-body;
+    font-size: 14px;
+  }
+
+  :global(th) {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid $color-gray;
+    color: $color-white;
+    font-family: $font-heading;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  :global(td) {
+    padding: 12px 16px;
+    border-bottom: 1px solid $color-gray;
+    color: $color-gray-mid;
+    line-height: 1.6;
+    vertical-align: top;
+  }
+
+  :global(tr:last-child td) {
+    border-bottom: none;
   }
 }
 
@@ -86,10 +116,11 @@
 
   code {
     font-family: $font-mono;
-    background-color: $color-gray;
+    background-color: transparent;
     padding: 2px 6px;
     border-radius: 4px;
-    font-size: 14px;
+    border-bottom: 1px solid yellow;
+    font-size: 13px;
   }
 
   pre {
@@ -98,10 +129,10 @@
     border-radius: 8px;
     overflow-x: auto;
 
-    code {
+    /*code {
       background-color: transparent;
       padding: 0;
-    }
+    }*/
   }
 
   ul, ol {

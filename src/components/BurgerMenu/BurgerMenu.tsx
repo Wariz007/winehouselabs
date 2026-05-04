@@ -10,10 +10,6 @@ export default function BurgerMenu() {
         <ul className={styles.resourceLinks}>
           <li>
             <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
-            <Link href="/resources/computer-systems">Computer Systems & Architecture</Link>
-          </li>
-          <li>
-            <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
             <Link href="/resources/web-technologies">Web Technologies</Link>
           </li>
           <li>
@@ -22,11 +18,15 @@ export default function BurgerMenu() {
           </li>
           <li>
             <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
+            <Link href="/resources/essential-tools">Essential Tools</Link>
+          </li>
+          <li>
+            <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
             <Link href="/resources/tech-roles">Tech Roles</Link>
           </li>
           <li>
             <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
-            <Link href="/resources/essential-tools">Essential Tools</Link>
+            <Link href="/resources/computer-systems">Computer Systems & Architecture</Link>
           </li>
         </ul>
       </div>

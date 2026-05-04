@@ -2,6 +2,7 @@ import { createClient } from '@/utils/supabase/server'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import styles from './page.module.scss'
+import remarkGfm from 'remark-gfm'
 
 interface Props {
   params: Promise<{ slug: string, subjectSlug: string, topicSlug: string }>
@@ -30,7 +31,7 @@ export default async function TopicPage({ params }: Props) {
         <div className={styles.divider}></div>
 
         <article className={styles.content}>
-          <ReactMarkdown>{topic.content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{topic.content}</ReactMarkdown>
         </article>
       </div>
     </main>
