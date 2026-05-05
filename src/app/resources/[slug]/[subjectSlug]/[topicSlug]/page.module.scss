@@ -33,6 +33,8 @@
     margin-block: 20px;
     font-family: $font-body;
     font-size: 14px;
+    display: block;
+    overflow-x: auto;
   }
 
   :global(th) {
@@ -124,7 +126,8 @@
   }
 
   pre {
-    background-color: $color-gray;
+    background-color: rgba(70, 70, 70, 0.201);
+    border: 0.5px solid white;
     padding: 20px;
     border-radius: 8px;
     overflow-x: auto;
