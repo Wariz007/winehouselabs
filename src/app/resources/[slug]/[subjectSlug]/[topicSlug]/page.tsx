@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import styles from './page.module.scss'
 import remarkGfm from 'remark-gfm'
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/agate.css';
 
 interface Props {
   params: Promise<{ slug: string, subjectSlug: string, topicSlug: string }>
@@ -31,7 +33,7 @@ export default async function TopicPage({ params }: Props) {
         <div className={styles.divider}></div>
 
         <article className={styles.content}>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{topic.content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>{topic.content}</ReactMarkdown>
         </article>
       </div>
     </main>
