@@ -70,3 +70,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 12px;
 }
+
+.empty {
+  opacity: 0.3;
+  color: white;
+  pointer-events: none;
+  cursor: not-allowed;
+}

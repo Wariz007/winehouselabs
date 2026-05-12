@@ -2,40 +2,45 @@ import styles from './BurgerMenu.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function BurgerMenu() {
+interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  has_content: boolean;
+}
+
+interface BurgerMenuProps {
+  categories: Category[];
+  onClose: () => void;
+}
+
+export default function BurgerMenu({ categories, onClose }: BurgerMenuProps) {
   return (
     <div className={styles.burgerMenu}>
       <div className={styles.section}>
         <span className={styles.sectionLabel}>Our Resources</span>
         <ul className={styles.resourceLinks}>
-          <li>
-            <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
-            <Link href="/resources/web-technologies">Web Technologies</Link>
-          </li>
-          <li>
-            <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
-            <Link href="/resources/programming-languages">Programming Languages</Link>
-          </li>
-          <li>
-            <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
-            <Link href="/resources/essential-tools">Essential Tools</Link>
-          </li>
-          <li>
-            <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
-            <Link href="/resources/tech-roles">Tech Roles</Link>
-          </li>
-          <li>
-            <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
-            <Link href="/resources/computer-systems">Computer Systems & Architecture</Link>
-          </li>
+          {categories.map((category) => (
+            <li
+              key={category.id}
+              className={!category.has_content ? styles.empty : ''}
+            >
+              <Image src="/arrow-elbow.png" alt="" width={20} height={20} aria-hidden="true" />
+              {category.has_content ? (
+                <Link href={`/resources/${category.slug}`} onClick={onClose}>{category.name}</Link>
+              ) : (
+                <span>{category.name}</span>
+              )}
+            </li>
+          ))}
         </ul>
       </div>
 
       <div className={styles.section}>
-        <Link href="/about" className={styles.pageLink}>About Us</Link>
-        <Link href="/research-presentation" className={styles.pageLink}>Our Research Presentation</Link>
-        <Link href="/terms" className={styles.pageLink}>Terms and Policy</Link>
-        <Link href="/community" className={styles.pageLink}>WHL Community</Link>
+        <Link href="/about" className={styles.pageLink} onClick={onClose}>About Us</Link>
+        <Link href="/researchPresentation" className={styles.pageLink} onClick={onClose}>Our Research Presentation</Link>
+        <Link href="/TandC" className={styles.pageLink} onClick={onClose}>Terms and Policy</Link>
+        <Link href="/community" className={styles.pageLink} onClick={onClose}>WHL Community</Link>
       </div>
     </div>
   );

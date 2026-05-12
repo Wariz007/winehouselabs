@@ -1,13 +1,15 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.scss';
-import BurgerMenu from '@/components/BurgerMenu/BurgerMenu';
+import NavbarClient from './NavbarClient';
+import { createClient } from '@/utils/supabase/server';
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default async function Navbar() {
+  const supabase = await createClient()
+  const { data: categories } = await supabase
+    .from('categories')
+    .select()
+    .order('created_at', { ascending: true })
 
   return (
     <nav className={styles.navbar}>
@@ -29,26 +31,13 @@ export default function Navbar() {
           />
         </Link>
 
-        <button
-          className={styles.hamburger}
-          aria-label="Toggle navigation menu"
-          aria-expanded={isMenuOpen}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <Image 
-              src="/burger_menu_icon.png"
-              alt="burger menu icon"
-              width={40}
-              height={40}
-          />
-        </button>
+        <NavbarClient categories={categories || []} />
 
         <ul className={styles.desktopNav}>
           <li><Link href="/about">About Us</Link></li>
           <li><Link href="/community">Community</Link></li>
         </ul>
       </div>
-      {isMenuOpen && <BurgerMenu />}
     </nav>
   );
 }
