@@ -1,6 +1,7 @@
 import { createClient } from '@/utils/supabase/server'
 import { notFound } from 'next/navigation'
 import styles from './page.module.scss'
+import Link from 'next/link'
 
 interface Props {
   params: Promise<{ slug: string, subjectSlug: string }>
@@ -37,9 +38,9 @@ export default async function SubjectPage({ params }: Props) {
           {topics?.map((topic: any) => (
             <li key={topic.id} className={styles.topicItem}>
               <span className={styles.lastUpdated}>Last updated: {topic.created_at?.split('T')[0]}</span>
-              <a href={`/resources/${slug}/${subjectSlug}/${topic.slug}`} className={styles.topicLink}>
+              <Link href={`/resources/${slug}/${subjectSlug}/${topic.slug}`} className={styles.topicLink}>
                 {topic.title}
-              </a>
+              </Link>
               <div className={styles.divider}></div>
             </li>
           ))}
