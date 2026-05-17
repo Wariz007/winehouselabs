@@ -2,7 +2,6 @@
 @use '@/styles/mixins' as *;
 
 .navbar {
-  //border: 2px solid magenta;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +18,6 @@
     }  
 
   .navContent {
-    //border: 2px solid magenta;
     display: flex;
     align-items: center;
     width: 100%;
